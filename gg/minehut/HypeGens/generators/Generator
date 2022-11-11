@@ -1,0 +1,66 @@
+package gg.minehut.HypeGen.generators;
+
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
+public class Generator {
+	
+	private Location loc;
+	private ItemStack item;
+	private double delay;
+	
+	private boolean exists = true;
+	private boolean running = false;
+	
+	public Generator(Location loc, Material itemMat, double delay) {
+		ItemStack item = new ItemStack(itemMat);
+		
+		this.loc = loc.add(0,1,0);
+		this.item = item;
+		this.delay = delay;
+		
+		new GeneratorRunner().run(this);
+	}
+	
+	public void remove() {
+		this.exists = false;
+	}
+	
+	public void move(Location loc) {
+		this.loc = loc;
+	}
+	
+	public void changeItem(ItemStack item) {
+		this.item = item;
+	}
+	
+	public void changeDelay(double delay) {
+		this.delay = delay;
+	}
+	
+	public double getDelay() {
+		return this.delay;
+	}
+	
+	public ItemStack getItem() {
+		return this.item;
+	}
+	
+	public Location getLocation() {
+		return this.loc;
+	}
+	
+	public boolean doesExist() {
+		return exists;
+	}
+	
+	public boolean isRunning() {
+		return running;
+	}
+	
+	public void setRunning(boolean running) {
+		this.running = running;
+	}
+	
+}

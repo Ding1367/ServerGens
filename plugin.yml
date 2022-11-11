@@ -1,0 +1,17 @@
+name: ServerGens
+version: 1.0
+api-version: 1.17
+description: HypeGen's generator plugin
+main: gg.minehut.HypeGen.ServerGens
+author: Ding1934
+
+commands:
+    generators:
+        description: The main/admin command for ServerGens.
+        aliases: [gens, generator, gen]
+    custom:
+        description: Custom generator command.
+        aliases: [cgen]
+    toggle:
+        aliases: [togglegens, tgens]
+        description: Toggle if gens are running.
